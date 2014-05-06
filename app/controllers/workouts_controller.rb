@@ -4,7 +4,17 @@ class WorkoutsController < ApplicationController
   # GET /workouts
   # GET /workouts.json
   def index
-    @workouts = current_user.workouts
+    if params[:user]
+      @person = User.find_by(id: params[:user][:user_id])
+      if @person
+        @workouts = @person.workouts
+      else
+        @workouts = current_user.workouts
+      end
+    else
+      @person = current_user
+      @workouts = current_user.workouts
+    end
   end
 
   # GET /workouts/1

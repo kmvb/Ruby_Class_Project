@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
  	validates :email, presence: true
   
   has_many :workouts
-  has_many :tasks
+  has_many :tasks, through: :workouts
   has_many :exercises, through: :tasks
 
 end
