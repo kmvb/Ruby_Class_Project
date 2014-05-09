@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   resources :exercises
 
-  resources :workouts
+  resources :workouts do 
+    resources :tasks
+  end
 
   devise_for :users
   root to: "exercises#index"

@@ -15,10 +15,19 @@
   <%= @workout.description %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @workout.user_id %>
-</p>
 
 <%= link_to 'Edit', edit_workout_path(@workout) %> |
 <%= link_to 'Back', workouts_path %>
+<%= link_to 'Add Exercise', new_workout_task_path(@workout) %>
+
+<h1>Exercise List</h1>
+
+<table class="table">
+<tr>
+	<th>Exercise</th>
+	<th>Quantity</th>
+	<th>Unit</th>
+
+</tr>
+	<%= render @workout.tasks %>
+</table>
