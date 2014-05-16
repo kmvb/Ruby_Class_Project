@@ -6,7 +6,6 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # config.secret_key = '4f01c5760ebc466a596e93bceb14bb3750dd44f4d9910664d1f762f1993b9c403c95d09a834c6420443c0860abe6a29ef4cdc6eed8f8f6bfff866decd8fad959'
 
-  config.omniauth :twitter, '3r6lxUE5KsXdKpIVejvd3pRSb', ENV['TWITTER_SECRET']
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -233,6 +232,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
+config.omniauth :twitter, '3r6lxUE5KsXdKpIVejvd3pRSb', ENV['TWITTER_SECRET']
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
