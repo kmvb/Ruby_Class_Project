@@ -14,6 +14,6 @@ class User < ActiveRecord::Base
   has_many :workouts
   has_many :tasks, through: :workouts
   has_many :exercises, through: :tasks
-
+  has_one :profile
 
 end
