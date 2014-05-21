@@ -4,8 +4,9 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
-    @profiles = Profile.name(current_user)
+    @profile = current_user.profile
   end
+
 
   # GET /profiles/1
   # GET /profiles/1.json
@@ -40,8 +41,11 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    @profile = Profile.new(profile_params)
+    @profile.avatar = params[:profile][:avatar]
+
     respond_to do |format|
-      if @profile.update(profile_params)
+      if @profile.save
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
@@ -69,6 +73,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:profile_image_url, :location, :gender, :email, :date_of_birth, :user_id)
+      params.require(:profile).permit(:location, :gender, :email, :date_of_birth, :user_id)
     end
 end

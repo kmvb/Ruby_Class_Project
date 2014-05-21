@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<div class='container'>
+
 <p>
-  <strong>Profile image url:</strong>
-  <%= @profile.profile_image_url %>
+  <strong>Profile Picture:</strong>
+  <%= image_tag @profile.avatar.url(:medium) %>
 </p>
 
 <p>
@@ -25,10 +27,7 @@
   <%= @profile.date_of_birth %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user_id %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>

@@ -42,4 +42,4 @@ gem 'spring',        group: :development
 
 gem 'omniauth-twitter'
 gem 'dotenv-rails', :groups => [:development, :test]
-
+gem 'paperclip', github: 'thoughtbot/paperclip' 
