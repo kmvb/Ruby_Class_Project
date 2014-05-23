@@ -9,7 +9,7 @@
 
 <h1>Listing workouts</h1>
 
-<table class='table'>
+<table class='table table-condensed'>
   <thead>
     <tr>
       <th>Completed on</th>
@@ -25,7 +25,7 @@
         <td><%= workout.completed_at %></td>
         <td><%= workout.title %></td>
         <td><%= workout.description %></td>
-        <td><%= link_to 'Show', workout %></td>
+        <td><%= link_to 'See Workout', workout %></td>
         <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
         <td><%= link_to 'Destroy', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

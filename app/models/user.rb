@@ -16,4 +16,6 @@ class User < ActiveRecord::Base
   has_many :exercises, through: :tasks
   has_one :profile
 
+  before_save :build_profile, on: :create
+
 end

@@ -1,33 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<div class='container'>
-
-<p>
-  <strong>Profile Picture:</strong>
-  <%= image_tag @profile.avatar.url(:medium) %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @profile.location %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @profile.gender %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @profile.email %>
-</p>
-
-<p>
-  <strong>Date of birth:</strong>
-  <%= @profile.date_of_birth %>
-</p>
-
-</div>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<h1>My Profile</h1>
+Name: <%= @profile.user.name %>
+        <p>Picture:<img src="<%= @profile.profile_image_url %>" class="img-circle"></p>
+        <p><span class="glyphicon glyphicon-globe"></span>Location:<%= @profile.location %></p>
+        <p><span class="glyphicon glyphicon-user"></span>Gender:<%= @profile.gender %></p>
+        <p><span class="glyphicon glyphicon-envelope"></span>Email:<%= @profile.email %></p>
+        <p>Date of Birth:<%= @profile.date_of_birth %></p>
+        <p><%= link_to 'Show Profile', @profile %></p>
+        <p><%= link_to 'Edit Profile', edit_profile_path %></p>
+        <p><%= link_to 'Delete Profile', @profile, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+   
