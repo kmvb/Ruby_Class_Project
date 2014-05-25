@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'summary' => "summary#index"
+
   resource :profile
 
   resources :exercises

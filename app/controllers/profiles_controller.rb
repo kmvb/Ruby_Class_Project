@@ -36,6 +36,7 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1.json
   def update
     @profile.attributes = profile_params
+    @profile.avatar = params[:profile][:avatar]
 
     respond_to do |format|
       if @profile.save

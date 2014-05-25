@@ -1,0 +1,7 @@
+<% @results.each do |type, tasks| %>
+	<h4>
+		For exercise <%= type %>: 
+		<%= tasks.inject(0) {|sum, task| sum + task.quantity } %>
+		<%= tasks.last.exercise.unit %>
+	</h4>
+<% end %>

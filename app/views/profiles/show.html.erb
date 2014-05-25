@@ -1,6 +1,6 @@
 <h1>My Profile</h1>
 Name: <%= @profile.user.name %>
-        <p>Picture:<img src="<%= @profile.profile_image_url %>" class="img-circle"></p>
+        <p>Picture:<img src="<%= @profile.avatar.url(:medium) %>" class="img-rounded"></p>
         <p><span class="glyphicon glyphicon-globe"></span>Location:<%= @profile.location %></p>
         <p><span class="glyphicon glyphicon-user"></span>Gender:<%= @profile.gender %></p>
         <p><span class="glyphicon glyphicon-envelope"></span>Email:<%= @profile.email %></p>
